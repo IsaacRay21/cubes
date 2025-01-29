@@ -1,5 +1,6 @@
 /** \file App.cpp */
 #include "App.h"
+#include "StairHelper.h"
 
 // Tells C++ to invoke command-line main() function even on OS X and Win32.
 G3D_START_AT_MAIN();
@@ -71,8 +72,10 @@ App::App(const GApp::Settings& settings) : GApp(settings) {
 // automatically caught.
 void App::onInit() {
     GApp::onInit();
-
+    G3D::debugPrintf("Target frame rate = %f Hz\n", 1.0f / realTimeTargetDuration());
     setFrameDuration(1.0f / 240.0f);
+	stairHelper();
+    
 
     // Call setScene(shared_ptr<Scene>()) or setScene(MyScene::create()) to replace
     // the default scene here.
