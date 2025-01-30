@@ -1,0 +1,561 @@
+// -*- c++ -*-
+{
+	name = "Sandbird";
+
+	models = {
+		cubeModel = ArticulatedModel::Specification {
+			filename = "model/crate/crate.obj";
+			preprocess = {
+				setMaterial(all(), "model/crate/SandBirdBlock.png");
+				transformGeometry(all(), Matrix4::scale(0.98, 0.98, 0.98));
+			};
+		};
+
+		wideCubeModel = ArticulatedModel::Specification {
+			filename = "model/crate/crate.obj";
+			preprocess = {
+				setMaterial(all(), "model/crate/SandBirdBlock.png");
+				transformGeometry(all(), Matrix4::scale(0.98, 0.98, 1.96));
+			};
+		};
+
+		wideLongCubeModel = ArticulatedModel::Specification {
+			filename = "model/crate/crate.obj";
+			preprocess = {
+				setMaterial(all(), "model/crate/SandBirdBlock.png");
+				transformGeometry(all(), Matrix4::scale(1.96, 0.98, 1.96));
+			};
+		};
+
+		headModel = ArticulatedModel::Specification {
+			filename = "model/crate/crate.obj";
+			preprocess = {
+				setMaterial(all(), "model/crate/SandBirdBlock.png");
+				transformGeometry(all(), Matrix4::scale(1.47, 1.6, 1.47));
+			};
+		};
+
+		hatModel = ArticulatedModel::Specification {
+			filename = "model/crate/crate.obj";
+			preprocess = {
+				setMaterial(all(), "model/crate/SandBirdBlock.png");
+				transformGeometry(all(), Matrix4::scale(1.2, 0.33, 0.98));
+			};
+		};
+
+		tailModel = ArticulatedModel::Specification {
+			filename = "model/crate/crate.obj";
+			preprocess = {
+				setMaterial(all(), "model/crate/SandBirdBlock.png");
+				transformGeometry(all(), Matrix4::scale(1.3034, 0.98, 1.3034));
+			};
+		};
+
+		wingModel = ArticulatedModel::Specification {
+			filename = "model/crate/crate.obj";
+			preprocess = {
+				setMaterial(all(), "model/crate/SandBirdBlock.png");
+				transformGeometry(all(), Matrix4::scale(0.98, 0.49, 1.96));
+			};
+		};
+
+		narrowWingModel = ArticulatedModel::Specification {
+			filename = "model/crate/crate.obj";
+			preprocess = {
+				setMaterial(all(), "model/crate/SandBirdBlock.png");
+				transformGeometry(all(), Matrix4::scale(0.98, 0.49, 0.98));
+			};
+		};
+
+		topperModel = ArticulatedModel::Specification {
+			filename = "model/crate/crate.obj";
+			preprocess = {
+				setMaterial(all(), "model/crate/SandBirdBlock.png");
+				transformGeometry(all(), Matrix4::scale(0.98, 0.245, 0.98));
+			};
+		};
+
+		noseModel = ArticulatedModel::Specification {
+			filename = "model/crate/crate.obj";
+			preprocess = {
+				setMaterial(all(), "model/crate/SandBirdBlock.png");
+				transformGeometry(all(), Matrix4::scale(2.94, 0.55, 0.98));
+			};
+		};
+	};
+
+	entities = {
+		skybox = Skybox{
+			texture = "cubemap/noonclouds/noonclouds_*.png";
+		};
+
+		sun = Light{
+			attenuation = (0, 0, 1);
+			bulbPower = Power3(4e+006);
+			frame = CFrame::fromXYZYPRDegrees(-15, 300, -41, -164, -77, 77);
+			shadowMapSize = Vector2int16(2048, 2048);
+			spotHalfAngleDegrees = 5;
+			rectangular = true;
+			type = "SPOT";
+		};
+
+		//Neck starts at (1,0,0)
+		neck0 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(1, 0, 0, 0, 0, 0);
+		};
+
+		neck1 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(2, 0, 0, 0, 0, 0);
+		};
+
+		neck2 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(3, 0, 0, 0, 0, 0);
+		};
+
+		neck3 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(4, 0, 0, 0, 0, 0);
+		};
+
+		//head starts at (5.2, 0, 0)
+		head = VisibleEntity{
+			model = headModel;
+			frame = CFrame::fromXYZYPRDegrees(5.2, 0, 0, 0, 0, 0);
+		};
+
+		hat = VisibleEntity{
+			model = hatModel;
+			frame = CFrame::fromXYZYPRDegrees(5.2, 0.9, 0, 0, 0, 0);
+		};
+
+		nose = VisibleEntity{
+			model = noseModel;
+			frame = CFrame::fromXYZYPRDegrees(7.4, 0, 0, 0, 0, 0);
+		};
+
+		//left wing starts at (0,0,0)
+		lwing1 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(0, 0, -0.75, 0, 0, 0);
+		};
+
+		lwing2 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-1, 0, -0.75, 0, 0, 0);
+		};
+
+		lwing3 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-2, 0, -0.75, 0, 0, 0);
+		};
+
+		lwing4 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(0, 0, -2.25, 0, 0, 0);
+		};
+
+		lwing5 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(0, 0, -3.25, 0, 0, 0);
+		};
+
+		lwing6 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(0, 0, -4.25, 0, 0, 0);
+		};
+
+		lwing7 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-1.5, 0, -2.25, 90, 0, 0);
+		};
+
+		lwing8 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-1.5, 0, -3.25, 90, 0, 0);
+		};
+
+		lwing9 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-1.5, 0, -4.25, 90, 0, 0);
+		};
+
+		lwing10 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(0, 0, -5.75, 0, 0, 0);
+		};
+
+		lwing11 = VisibleEntity{
+			model = wideLongCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-1.5, 0, -5.75, 0, 0, 0);
+		};
+
+		lwing12 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-3, 0, -4.25, 0, 0, 0);
+		};
+
+		lwing13 = VisibleEntity{
+			model = wideLongCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-3.5, 0, -5.75, 0, 0, 0);
+		};
+
+		lwing14 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(0, 0, -7.25, 0, 0, 0);
+		};
+
+		lwing15 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-1.5, 0, -7.25, 90, 0, 0);
+		};
+
+		lwing16 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-3.5, 0, -7.25, 90, 0, 0);
+		};
+
+		lwing17 = VisibleEntity{
+			model = wideLongCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-0.5, 0, -8.75, 0, 0, 0);
+		};
+
+		lwing18 = VisibleEntity{
+			model = wideLongCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-0.5, 0, -10.75, 0, 0, 0);
+		};
+
+		lwing19 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(1, 0, -8.75, 0, 0, 0);
+		};
+
+		lwing20 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(1, 0, -10.75, 0, 0, 0);
+		};
+
+		lwing21 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-2, 0, -8.75, 0, 0, 0);
+		};
+
+		lwing22 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-3, 0, -8.75, 0, 0, 0);
+		};
+
+		lwing23 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(1, 0, -12.25, 0, 0, 0);
+		};
+
+		lwing24 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(0, 0, -12.25, 0, 0, 0);
+		};
+
+		lwing25 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-1, 0, -12.25, 0, 0, 0);
+		};
+
+		lwing26 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-3, 0, -10.25, 0, 0, 0);
+		};
+
+		lwing27 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-2, 0, -10.25, 0, 0, 0);
+		};
+
+		lwing28 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-2, 0, -11.25, 0, 0, 0);
+		};
+
+		lwing29 = VisibleEntity{
+			model = wingModel;
+			frame = CFrame::fromXYZYPRDegrees(1, 0.25, -13.75, 0, 0, 0);
+		};
+
+		lwing30 = VisibleEntity{
+			model = wingModel;
+			frame = CFrame::fromXYZYPRDegrees(0, 0.25, -13.75, 0, 0, 0);
+		};
+
+		lwing31 = VisibleEntity{
+			model = wingModel;
+			frame = CFrame::fromXYZYPRDegrees(-1, 0.25, -13.75, 0, 0, 0);
+		};
+
+		lwing32 = VisibleEntity{
+			model = wingModel;
+			frame = CFrame::fromXYZYPRDegrees(-2, 0.25, -12.75, 0, 0, 0);
+		};
+
+		lwing33 = VisibleEntity{
+			model = wingModel;
+			frame = CFrame::fromXYZYPRDegrees(-3, 0.25, -11.75, 0, 0, 0);
+		};
+
+		lwing34 = VisibleEntity{
+			model = narrowWingModel;
+			frame = CFrame::fromXYZYPRDegrees(1, 0.25, -15.25, 0, 0, 0);
+		};
+
+		lwing35 = VisibleEntity{
+			model = topperModel;
+			frame = CFrame::fromXYZYPRDegrees(1, 0.625, -12.25, 0, 0, 0);
+		};
+
+		//right wing
+		rwing1 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(0, 0, 0.75, 0, 0, 0);
+		};
+
+		rwing2 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-1, 0, 0.75, 0, 0, 0);
+		};
+
+		rwing3 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-2, 0, 0.75, 0, 0, 0);
+		};
+
+		rwing4 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(0, 0, 2.25, 0, 0, 0);
+		};
+
+		rwing5 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(0, 0, 3.25, 0, 0, 0);
+		};
+
+		rwing6 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(0, 0, 4.25, 0, 0, 0);
+		};
+
+		rwing7 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-1.5, 0, 2.25, 90, 0, 0);
+		};
+
+		rwing8 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-1.5, 0, 3.25, 90, 0, 0);
+		};
+
+		rwing9 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-1.5, 0, 4.25, 90, 0, 0);
+		};
+
+		rwing10 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(0, 0, 5.75, 0, 0, 0);
+		};
+
+		wing11 = VisibleEntity{
+			model = wideLongCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-1.5, 0, 5.75, 0, 0, 0);
+		};
+
+		rwing12 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-3, 0, 4.25, 0, 0, 0);
+		};
+
+		rwing13 = VisibleEntity{
+			model = wideLongCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-3.5, 0, 5.75, 0, 0, 0);
+		};
+
+		rwing14 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(0, 0, 7.25, 0, 0, 0);
+		};
+
+		rwing15 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-1.5, 0, 7.25, 90, 0, 0);
+		};
+
+		rwing16 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-3.5, 0, 7.25, 90, 0, 0);
+		};
+
+		rwing17 = VisibleEntity{
+			model = wideLongCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-0.5, 0, 8.75, 0, 0, 0);
+		};
+
+		rwing18 = VisibleEntity{
+			model = wideLongCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-0.5, 0, 10.75, 0, 0, 0);
+		};
+
+		rwing19 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(1, 0, 8.75, 0, 0, 0);
+		};
+
+		rwing20 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(1, 0, 10.75, 0, 0, 0);
+		};
+
+		rwing21 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-2, 0, 8.75, 0, 0, 0);
+		};
+
+		rwing22 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-3, 0, 8.75, 0, 0, 0);
+		};
+
+		rwing23 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(1, 0, 12.25, 0, 0, 0);
+		};
+
+		rwing24 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(0, 0, 12.25, 0, 0, 0);
+		};
+
+		rwing25 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-1, 0, 12.25, 0, 0, 0);
+		};
+
+		rwing26 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-3, 0, 10.25, 0, 0, 0);
+		};
+
+		rwing27 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-2, 0, 10.25, 0, 0, 0);
+		};
+
+		rwing28 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-2, 0, 11.25, 0, 0, 0);
+		};
+
+		rwing29 = VisibleEntity{
+			model = wingModel;
+			frame = CFrame::fromXYZYPRDegrees(1, 0.25, 13.75, 0, 0, 0);
+		};
+
+		rwing30 = VisibleEntity{
+			model = wingModel;
+			frame = CFrame::fromXYZYPRDegrees(0, 0.25, 13.75, 0, 0, 0);
+		};
+
+		rwing31 = VisibleEntity{
+			model = wingModel;
+			frame = CFrame::fromXYZYPRDegrees(-1, 0.25, 13.75, 0, 0, 0);
+		};
+
+		rwing32 = VisibleEntity{
+			model = wingModel;
+			frame = CFrame::fromXYZYPRDegrees(-2, 0.25, 12.75, 0, 0, 0);
+		};
+
+		rwing33 = VisibleEntity{
+			model = wingModel;
+			frame = CFrame::fromXYZYPRDegrees(-3, 0.25, 11.75, 0, 0, 0);
+		};
+
+		rwing34 = VisibleEntity{
+			model = narrowWingModel;
+			frame = CFrame::fromXYZYPRDegrees(1, 0.25, 15.25, 0, 0, 0);
+		};
+
+		rwing35 = VisibleEntity{
+			model = topperModel;
+			frame = CFrame::fromXYZYPRDegrees(1, 0.625, 12.25, 0, 0, 0);
+		};
+
+		//tail
+		tail1 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-3,0, 0, 0, 0, 0);
+		};
+
+		tail2 = VisibleEntity{
+			model = tailModel;
+			frame = CFrame::fromXYZYPRDegrees(-4.165 ,0, 0.665, 0, 0, 0);
+		};
+
+		tail3 = VisibleEntity{
+			model = tailModel;
+			frame = CFrame::fromXYZYPRDegrees(-4.165 ,0, -0.665, 0, 0, 0);
+		};
+
+		tail4 = VisibleEntity{
+			model = wideCubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-5.83,0, 0, 90, 0, 0);
+		};
+
+		tail5 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-7.33,0, 0, 0, 0, 0);
+		};
+
+		tail6 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-8.33,0, 0, 0, 0, 0);
+		};
+
+		tail7 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-9.33,0, 0, 0, 0, 0);
+		};
+
+		tail8 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-10.33,0, 0, 0, 0, 0);
+		};
+
+		tail9 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-11.33,0, 0, 0, 0, 0);
+		};
+
+		tail10 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-12.33,0, 0, 0, 0, 0);
+		};
+
+		tail11 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-7.33,0, 0, 0, 0, 0);
+		};
+
+		float1 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-5.33,0, -1.83, 0, 0, 0);
+		};
+
+		float2 = VisibleEntity{
+			model = cubeModel;
+			frame = CFrame::fromXYZYPRDegrees(-5.33,0, 1.83, 0, 0, 0);
+		};
+
+		camera = Camera{
+			frame = CFrame::fromXYZYPRDegrees(21.3, 10.5, 16.9, 57.9, -14.3);
+		};
+	};
+};

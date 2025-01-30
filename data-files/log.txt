@@ -1,13 +1,13 @@
 Application Log
-Start: Wed Jan 29 10:33:42 2025
+Start: Wed Jan 29 19:28:23 2025
 
 WARNING: AudioDevice is not enabled. Set G3DSpecification::audio = true before invoking initGLG3D() to enable audio.
-Initializing System::findDataFile took 0.002481s
+Initializing System::findDataFile took 0.004111s
 
 Entering GApp::GApp()
 cwd = C:\Users\theik\OneDrive\Desktop\Cubes\data-files
 System::setAppDataDir("C:\Users\theik\OneDrive\Desktop\Cubes\data-files")
-System::setAppDataDirs()Initializing System::findDataFile took 0.002108s
+System::setAppDataDirs()Initializing System::findDataFile took 0.002655s
 Setting video mode
 wglSwapIntervalEXT(0);
 Setting initial rendering state.
@@ -613,6 +613,7 @@ Done GApp::GApp()
 
 Found scenes:
   "Cornell Cube" (C:\Users\theik\OneDrive\Desktop\Cubes\data-files/CornellCube.Scene.Any)
+  "Sandbird" (C:\Users\theik\OneDrive\Desktop\Cubes\data-files/Sandbird.Scene.Any)
   "Staircase" (C:\Users\theik\OneDrive\Desktop\Cubes\data-files/Staircase.Scene.Any)
   "Test Scene" (C:\Users\theik\OneDrive\Desktop\Cubes\data-files/test.Scene.Any)
   "White Cube" (C:\Users\theik\OneDrive\Desktop\Cubes\data-files/WhiteCube.Scene.Any)
@@ -688,6 +689,7 @@ Found scenes:
   "G3D VR Gallery" (C:\Users\theik\Downloads\G3D\data10\research/scene/G3D_VR_Gallery.Scene.Any)
 Found scenes:
   "Cornell Cube" (C:\Users\theik\OneDrive\Desktop\Cubes\data-files/CornellCube.Scene.Any)
+  "Sandbird" (C:\Users\theik\OneDrive\Desktop\Cubes\data-files/Sandbird.Scene.Any)
   "Staircase" (C:\Users\theik\OneDrive\Desktop\Cubes\data-files/Staircase.Scene.Any)
   "Test Scene" (C:\Users\theik\OneDrive\Desktop\Cubes\data-files/test.Scene.Any)
   "White Cube" (C:\Users\theik\OneDrive\Desktop\Cubes\data-files/WhiteCube.Scene.Any)
@@ -793,7 +795,6 @@ Vertex info
 -----------
 1(39) : warning C7050: "tex0" might be used before being initialized
 1(39) : warning C7050: "tex1" might be used before being initialized
-
 
 
 

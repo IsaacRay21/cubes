@@ -74,7 +74,6 @@ void App::onInit() {
     GApp::onInit();
     G3D::debugPrintf("Target frame rate = %f Hz\n", 1.0f / realTimeTargetDuration());
     setFrameDuration(1.0f / 240.0f);
-	stairHelper();
     
 
     // Call setScene(shared_ptr<Scene>()) or setScene(MyScene::create()) to replace

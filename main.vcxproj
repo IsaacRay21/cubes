@@ -93,15 +93,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="source\App.h" />
+    <ClInclude Include="source\StairHelper.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\App.cpp" />
+    <ClCompile Include="source\StairHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resources.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="data-files\CornellCube.Scene.Any" />
+    <None Include="data-files\Sandbird.Scene.Any" />
+    <None Include="data-files\Staircase.Scene.Any" />
     <None Include="data-files\test.Scene.Any" />
+    <None Include="data-files\WhiteCube2.Scene.Any" />
     <None Include="journal\journal.md.html" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
